@@ -23,8 +23,8 @@ function draw() {
     background('#000000');
 
     push()
-    translate(-423, -421, pos - 2000)
-    image(algue, 0,0);
+    translate(-423, -421.5, pos - 2000)
+    image(algue, 0,0, 846, 843);
     pop()
 
     a = a + 0.01
