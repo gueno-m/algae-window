@@ -7,7 +7,7 @@ let canvas = null;
     algue = loadImage('assets/algue.png');
     vid = createVideo('../assets/algae360.mp4');
     Mazzard = loadFont("../assets/fonts/MazzardM-Medium.ttf");
-    Zolina = loadFont("../assets/fonts/Zolina-Bold.ttf");
+    Zolina = loadFont("../assets/fonts/Zolina-Regular.ttf");
     vid.size(windowWidth, windowHeight)
  }
 
@@ -77,8 +77,8 @@ function draw() {
     textSize(250)
     push()
     textFont(Zolina)
-    translate(-985, 87, pos)
-    text('algae windØw'.toUpperCase(), 0, 0)
+    translate(-850, 87, pos)
+    text('Algae Windøw', 0, 0)
     pop()
 
     // LINE
