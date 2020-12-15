@@ -1,6 +1,6 @@
 # algae-window
 
-Expérience immersive à travers d'oeuvres d'Olafur Eliasson
+Expérience immersive à travers des oeuvres d'Olafur Eliasson pour sensibiliser à l'écologie
 
 Lien : todo
 
