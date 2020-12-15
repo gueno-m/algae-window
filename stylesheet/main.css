@@ -22,18 +22,17 @@ nav {
     justify-content: space-between;
 }
 
-nav h2 {
-    margin: auto;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 20px;
-    font-size: 1.125rem;
-}
-
 nav a {
     margin: auto;
-    margin-right: 20px;
     width: auto;
+}
+
+nav a:first-child {
+    margin-left: 20px;
+}
+
+nav a:last-child {
+    margin-right: 20px;
 }
 
 nav img {
@@ -47,10 +46,32 @@ nav img {
     z-index:555;
     color: white;
     text-transform: uppercase;
-    font-family: Helvetica, sans-serif;
+    font-family: Mazzard, sans-serif;
     visibility: hidden;
     letter-spacing: 8px;
 }
+
+#retourCarte {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index:555;
+    text-decoration: none;
+    color: red;
+    display: flex;
+    visibility: hidden;
+    width: 6%;
+}
+
+#retourCarte img {
+    margin: auto;
+    width: 100%;
+    transition: all .3 ease;
+}
+
+#retourCarte img:hover {
+    filter: drop-shadow(16px 16px 20px black);
+ }
 
 .video-js {
     position: relative ;
@@ -62,6 +83,30 @@ nav img {
     position: absolute;
     z-index: 1;
     top: 0;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+0% {
+ opacity: 1;
+}
+50% {
+ opacity: 0.5;
+}
+100% {
+ opacity: 1;
+}
 }
 
 @media screen and (max-width: 750px) {
@@ -78,6 +123,6 @@ nav img {
         margin: auto;
         text-align: center;
         width: 90%;
-        font-family: Helvetica, sans-serif;
+        font-family: Mazzard, sans-serif;
     }
 }
