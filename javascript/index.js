@@ -5,7 +5,7 @@ let title
  function preload() {
     algue = loadImage('assets/algue.png');
     Helvetica = loadFont("../assets/HelveticaNowMicro-Medium.ttf");
-    vid = createVideo('../assets/test.mp4');
+    vid = createVideo('../assets/algae360.mp4');
     vid.size(windowWidth, windowHeight)
  }
 
