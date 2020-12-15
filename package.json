@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "surge ./ algue.surge.sh"
+    "deploy": "surge ./ algue.surge.sh",
+    "deployrobin": "surge ./ alguerobin.surge.sh"
   },
   "author": "",
   "license": "ISC",
