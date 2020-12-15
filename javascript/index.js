@@ -1,11 +1,13 @@
 let pos = 6000;
 let a = 0;
 let title
+let canvas = null;
 
  function preload() {
     algue = loadImage('assets/algue.png');
-    Helvetica = loadFont("../assets/HelveticaNowMicro-Medium.ttf");
     vid = createVideo('../assets/algae360.mp4');
+    Mazzard = loadFont("../assets/fonts/MazzardM-Medium.ttf");
+    Stix = loadFont("../assets/fonts/STIXGeneral.otf");
     vid.size(windowWidth, windowHeight)
  }
 
@@ -14,11 +16,23 @@ function setup() {
     cam = createCamera();
     cam.move(0, 0, 6500)
     title = document.getElementById("titre")
+    retourCarte = document.getElementById("retourCarte")
     vid = document.getElementById("video")
     canvas = document.getElementById('defaultCanvas0')
     progress = document.getElementById('progress')
+    
+    // window.addEventListener('resize', function(){
+    //     console.log(canvas)
+    //     canvas.style.width = window.innerWidth;
+    //     canvas.style.height = window.innerHeight;
+    //     canvas.width = window.innerWidth;
+    //     canvas.height = window.innerHeight;
+    // });
 }
 function draw() {
+
+    a = a + 0.01
+
     smooth()
     background('#000000');
 
@@ -27,58 +41,68 @@ function draw() {
     image(algue, 0,0, 846, 843);
     pop()
 
-    a = a + 0.01
-
+    // CARRE SCROLL
     push()
     strokeWeight(3)
     stroke('white')
-    point(20, 50)
-    point(80, 50)
     fill('black')
     translate(-40, 500, pos)
     rotate(a)
     rect(-40, -40, 80, 80)
     pop()
 
-    fill('#FFFFFF')
+    // SCROLL
+    let clignote = color(255, 255, 255)
+    clignote.setAlpha(128 + 128 * sin(millis() / 300))
+    fill(clignote)
     textSize(15)
     push()
-    textFont(Helvetica)
-    translate(-75, 505, pos)
+    textFont(Mazzard)
+    translate(-68, 505, pos)
     text('scroll'.toUpperCase(), 0, 0)
     pop()
 
-    push()//RECT NOIR
+    //RECT NOIR
+    push()
     strokeWeight(0);
     blendMode(DARKEST);
-
-    fill(0,0,0, ((7000 - pos)/1000)*255);
-
+    fill(0,0,0, -((7000 - pos)/1000)*255);
     translate(-500, -200, pos-10)
     rect(0, 0, 1000, 400)
     blendMode(BLEND);
     pop()
 
-    fill('#FFFFFF')//TITLE
-    textSize(200)
+    //TITLE
+    fill('#FFFFFF')
+    textSize(250)
     push()
-    textFont(Helvetica)
-    translate(-935, 80, pos)
-    text('algae window'.toUpperCase(), 0, 0)
-    pop()
-fill('#FFFFFF')
-    textSize(20)
-    push()
-    textFont(Helvetica)
-    translate(400, -50, pos-1000)
-    text(`Materials:${`\n`}${`\n`}- Glass spheres, ${`\n`}- Steel, ${`\n`}- Aluminium, ${`\n`}- Plastic, ${`\n`}- Paint (black)`,0,0)
+    textFont(Stix)
+    translate(-985, 82, pos)
+    text('algae windØw'.toUpperCase(), 0, 0)
     pop()
 
-    fill('#FFFFFF')
+    // LINE
+    push()
+    strokeWeight(2)
+    stroke(255, 255, 255, -((7000 - pos)/1000)*255*2)
+    line(450, -120, pos-2000, 290, -58, pos-1000);
+    pop()
+
+    // Materials
     textSize(20)
     push()
-    textFont(Helvetica)
-    translate(-850, -100, pos-1000)
+    textFont(Mazzard)
+    fill(255, 255, 255, -((7000 - pos)/1000)*255*2);
+    translate(300, -50, pos-1000)
+    text(`Materials:${`\n`}${`\n`}- Glass spheres, ${`\n`}- Steel, ${`\n`}- Aluminium, ${`\n`}- Plastic, ${`\n`}- Paint (black).`,0,0)
+    pop()
+
+    // TEXTE
+    fill('#FFFFFF')
+    textSize(18)
+    push()
+    textFont(Mazzard)
+    translate(-500, -100, pos-500)
     text(`Algae window is an arrangement ${`\n`}of glass spheres mounted in a wall. ${`\n`}Directly behind the wall and the spheres ${`\n`}is a window; vivid, miniature, inverted ${`\n`}views of the scene outside the gallery ${`\n`}thus appear in and inhabit each sphere. ${`\n`}The composition of the work closely ${`\n`}resembles the structure of one type ${`\n`}of the single-celled algae known as ${`\n`}diatoms, which remove large amounts ${`\n`}of carbon from the atmosphere.`,0,0)
     pop()
     
@@ -89,10 +113,13 @@ fill('#FFFFFF')
     else
         title.style.visibility = "hidden"
     
-    if (pos <= 9000)
+    if (pos <= 9000) {
         canvas.style.visibility = "visible"
-    else
+        retourCarte.style.visibility = "hidden"
+    } else {
         canvas.style.visibility = "hidden"
+        retourCarte.style.visibility = "visible"
+    }
 
     let o = 1 - (pos- 8600)/1000
     canvas.style.opacity = o;

@@ -30,18 +30,17 @@ nav {
     justify-content: space-between;
 }
 
-nav h2 {
-    margin: auto;
-    color: white;
-    font-family: "MazzardM-Medium";
-    margin-left: 20px;
-    font-size: 1.125rem;
-}
-
 nav a {
     margin: auto;
+    color: white;
+}
+
+nav a:first-child {
+    margin-left: 20px;
+}
+
+nav a:last-child {
     margin-right: 20px;
-    width: auto;
 }
 
 nav img {
@@ -59,6 +58,28 @@ nav img {
     visibility: hidden;
     letter-spacing: 8px;
 }
+
+#retourCarte {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index:555;
+    text-decoration: none;
+    color: red;
+    display: flex;
+    visibility: hidden;
+    width: 6%;
+}
+
+#retourCarte img {
+    margin: auto;
+    width: 100%;
+    transition: all .3 ease;
+}
+
+#retourCarte img:hover {
+    filter: drop-shadow(16px 16px 20px black);
+ }
 
 .video-js {
     position: relative;
@@ -80,6 +101,29 @@ nav img {
     bottom: 0;
     left: 0;
     z-index: 9999;
+}
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+0% {
+ opacity: 1;
+}
+50% {
+ opacity: 0.5;
+}
+100% {
+ opacity: 1;
+}
 }
 
 @media screen and (max-width: 750px) {
