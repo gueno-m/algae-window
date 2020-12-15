@@ -16,8 +16,8 @@ function setup() {
     title = document.getElementById("titre")
     vid = document.getElementById("video")
     canvas = document.getElementById('defaultCanvas0')
+    progress = document.getElementById('progress')
 }
-
 function draw() {
     smooth()
     background('#000000');
@@ -66,8 +66,7 @@ function draw() {
     translate(-935, 80, pos)
     text('algae window'.toUpperCase(), 0, 0)
     pop()
-
-    fill('#FFFFFF')
+fill('#FFFFFF')
     textSize(20)
     push()
     textFont(Helvetica)
@@ -97,6 +96,9 @@ function draw() {
 
     let o = 1 - (pos- 8600)/1000
     canvas.style.opacity = o;
+
+    let w = (pos - 6000)/30
+    progress.style.width = `${w}%`
 }
 
 function mouseWheel(event) {
@@ -108,6 +110,8 @@ function mouseWheel(event) {
     if (pos > 9001) {
         pos = 9001
     }
+
+    
 }
 
 
@@ -119,4 +123,3 @@ function mouseWheel(event) {
 
     let vr = window.vr = player.vr({projection: 'EAC', debug: true, forceCardboard: false});
   }(window, window.videojs));
-

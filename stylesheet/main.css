@@ -64,6 +64,16 @@ nav img {
     top: 0;
 }
 
+#progress{
+    background-color: #fff;
+    height: 4px;
+    width: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+}
+
 @media screen and (max-width: 750px) {
     .phone-hide {
         position: absolute;
