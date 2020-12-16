@@ -139,7 +139,7 @@ function draw() {
     if(pos > 6150) {
         rond1.style.backgroundColor = "white";
     } else {
-        rond1.style.backgroundColor = "black";
+        rond1.style.backgroundColor = "transparent";
     }
 
     // if(pos > 7049) {
@@ -151,13 +151,13 @@ function draw() {
     if(pos > 7949) {
         rond3.style.backgroundColor = "white";
     } else {
-        rond3.style.backgroundColor = "black";
+        rond3.style.backgroundColor = "transparent";
     }
 
     if(pos > 9000) {
         rond4.style.backgroundColor = "white";
     } else {
-        rond4.style.backgroundColor = "black";
+        rond4.style.backgroundColor = "transparent";
     }
 }
 
