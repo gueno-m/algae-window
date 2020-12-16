@@ -166,13 +166,13 @@ function draw() {
         rond1.style.backgroundColor = "transparent";
     }
 
-    if(pos > 6960) {
+    if(pos > 6959) {
         rond2.style.backgroundColor = "white";
     } else {
         rond2.style.backgroundColor = "black";
     }
 
-    if(pos > 7908) {
+    if(pos > 7922) {
         rond3.style.backgroundColor = "white";
     } else {
         rond3.style.backgroundColor = "transparent";
