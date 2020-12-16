@@ -15,6 +15,14 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Zolina-Regular";
+    src: url("../assets/fonts/Zolina-Regular.woff2") format("woff2"),
+        url("../assets/fonts/Zolina-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .phone-hide {
     display: none;
 }
@@ -49,14 +57,14 @@ nav img {
 
 #titre {
     position: absolute;
-    bottom: 0;
-    left: 20px;
+    bottom: 70px;
+    left: -50px;
     z-index: 555;
     color: white;
-    text-transform: uppercase;
-    font-family: "MazzardM-Medium";
+    font-family: "Zolina-Regular";
     visibility: hidden;
-    letter-spacing: 8px;
+    /* letter-spacing: 8px; */
+    transform: rotate(-90deg);
 }
 
 #retourCarte {
