@@ -8,6 +8,7 @@ let canvas = null;
     vid = createVideo('../assets/algae360.mp4');
     Mazzard = loadFont("../assets/fonts/MazzardM-Medium.ttf");
     Zolina = loadFont("../assets/fonts/Zolina-Regular.ttf");
+    ZolinaBold = loadFont("../assets/fonts/Zolina-Bold.ttf");
     vid.size(windowWidth, windowHeight)
  }
 
@@ -85,34 +86,59 @@ function draw() {
     text('Algae Windøw', 0, 0)
     pop()
 
-    // LINE
+    // LINE CONTEXT
     push()
     strokeWeight(2)
-    stroke(255, 255, 255, -((7000 - pos)/1000)*255*2)
-    line(450, -120, pos-2000, 290, -58, pos-1000);
+    stroke(255, 255, 255, -((7000 - pos)/1000)*255*2.5)
+    line(400, 200, pos-2000, 290, 95, pos-1000);
     pop()
 
-    // Materials
-    textSize(20)
+    // TITRE CONTEXT
+    textSize(40)
     push()
-    textFont(Mazzard)
-    fill(255, 255, 255, -((7000 - pos)/1000)*255*2);
-    translate(300, -50, pos-1000)
-    text(`Materials:${`\n`}${`\n`}- Glass spheres, ${`\n`}- Steel, ${`\n`}- Aluminium, ${`\n`}- Plastic, ${`\n`}- Paint (black).`,0,0)
+    textFont(ZolinaBold)
+    fill(255, 255, 255, -((7000 - pos)/1000)*255*2.5);
+    translate(270, 70, pos-1000)
+    text(`Context`,0,0)
     pop()
 
-    // TEXTE
-    fill('#FFFFFF')
+    // CONTEXT
     textSize(18)
     push()
     textFont(Mazzard)
-    translate(-500, -100, pos-500)
-    text(`Algae window is an arrangement ${`\n`}of glass spheres mounted in a wall. ${`\n`}Directly behind the wall and the spheres ${`\n`}is a window; vivid, miniature, inverted ${`\n`}views of the scene outside the gallery ${`\n`}thus appear in and inhabit each sphere. ${`\n`}The composition of the work closely ${`\n`}resembles the structure of one type ${`\n`}of the single-celled algae known as ${`\n`}diatoms, which remove large amounts ${`\n`}of carbon from the atmosphere.`,0,0)
+    fill(175, 175, 175, -((7000 - pos)/1000)*255*2.5);
+    translate(300, 100, pos-1000)
+    text(`Inspired by the algae cell ${`\n`}structure called diatoms, which ${`\n`}removes large amounts of ${`\n`}carbon from the atmosphere`,0,0)
+    pop()
+
+    // LINE WORK    
+    push()
+    strokeWeight(2)
+    stroke('white')
+    line(-450, -120, pos-2000, -170, -58, pos-600);
+    pop()
+
+    // TITRE WORK
+    fill('#FFFFFF')
+    textSize(40)
+    push()
+    textFont(ZolinaBold)
+    translate(-530, -130, pos-600)
+    text(`Work`,0,0)
+    pop()
+
+    // WORK
+    fill(175, 175, 175)
+    textSize(18)
+    push()
+    textFont(Mazzard)
+    translate(-500, -100, pos-600)
+    text(`Glass spheres mounted in a wall. Behind is a ${`\n`}window; vivid, miniature, inverted views of the ${`\n`}scene outside thus appear in each sphere. ${`\n`}Exhibited at the Kunsthaus museum, Zürich.`,0,0)
     pop()
     
     orbitControl(.02, .02, .0001)
 
-    if (pos > 7049) {
+    if (pos > 7100.5) {
         title.style.visibility = "visible"
         rond2.style.backgroundColor = "white";
     }
