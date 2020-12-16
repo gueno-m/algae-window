@@ -20,6 +20,10 @@ function setup() {
     vid = document.getElementById("video")
     canvas = document.getElementById('defaultCanvas0')
     progress = document.getElementById('progress')
+    rond1 = document.getElementsByClassName('rond')[0]
+    rond2 = document.getElementsByClassName('rond')[1]
+    rond3 = document.getElementsByClassName('rond')[2]
+    rond4 = document.getElementsByClassName('rond')[3]
     
     // window.addEventListener('resize', function(){
     //     console.log(canvas)
@@ -108,10 +112,14 @@ function draw() {
     
     orbitControl(.02, .02, .0001)
 
-    if (pos > 7100)
+    if (pos > 7049) {
         title.style.visibility = "visible"
-    else
+        rond2.style.backgroundColor = "white";
+    }
+    else {
         title.style.visibility = "hidden"
+        rond2.style.backgroundColor = "black";
+    }
     
     if (pos <= 9000) {
         canvas.style.visibility = "visible"
@@ -126,19 +134,43 @@ function draw() {
 
     let w = (pos - 6000)/30
     progress.style.width = `${w}%`
+    // console.log(w)
+
+    if(pos > 6150) {
+        rond1.style.backgroundColor = "white";
+    } else {
+        rond1.style.backgroundColor = "transparent";
+    }
+
+    // if(pos > 7049) {
+    //     rond2.style.backgroundColor = "white";
+    // } else {
+    //     rond2.style.backgroundColor = "black";
+    // }
+
+    if(pos > 7949) {
+        rond3.style.backgroundColor = "white";
+    } else {
+        rond3.style.backgroundColor = "transparent";
+    }
+
+    if(pos > 9000) {
+        rond4.style.backgroundColor = "white";
+    } else {
+        rond4.style.backgroundColor = "transparent";
+    }
 }
 
 function mouseWheel(event) {
     pos += event.delta;
+    console.log(pos)
     if (pos < 6000) {
         pos = 6000
     }
 
     if (pos > 9001) {
         pos = 9001
-    }
-
-    
+    }    
 }
 
 

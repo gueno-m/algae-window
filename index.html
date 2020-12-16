@@ -15,18 +15,23 @@
 
     <nav>
         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="46" viewBox="0 0 24 46">
-            <text id="Ø" transform="translate(12 32)" fill="#fff" font-size="30" font-family="STIXGeneral-Bold, STIXGeneral" font-weight="700"><tspan x="-11.67" y="0">Ø</tspan></text>
-          </svg></a>
-        <a href="https://artofchange21.com/en/home/" target="_blank"><img src="../assets/logo.png" alt="Logo Art of change"></a>
+                <text id="Ø" transform="translate(12 32)" fill="#fff" font-size="30"
+                    font-family="STIXGeneral-Bold, STIXGeneral" font-weight="700">
+                    <tspan x="-11.67" y="0">Ø</tspan>
+                </text>
+            </svg></a>
+        <a href="https://artofchange21.com/en/home/" target="_blank"><img src="../assets/logo.png"
+                alt="Logo Art of change"></a>
     </nav>
 
-    <div id="p5_loading" style="position:relative; height: 100vh; width: 100%; background-color: #000000; display:flex; z-index: 555555;">
+    <div id="p5_loading"
+        style="position:relative; height: 100vh; width: 100%; background-color: #000000; display:flex; z-index: 555555;">
         <div style="margin:auto; color: #FFFFFF; font-family: Helvetica, sans-serif;
         animation: pulse 3s infinite ease-in-out;">
             LOADING...
         </div>
     </div>
-    
+
     <div class="phone-hide">
         <div class="phone-message">Cette expérience n'est pas disponible sur mobile.</div>
     </div>
@@ -35,18 +40,26 @@
 
     <a href="#" id="retourCarte"><img src="./assets/retour-carte.png" alt=""></a>
 
-    <div id="progress"></div>
+    <div class="progress-container">
+        <div id="progress"></div>
+        <div class="rond-container">
+            <div class="rond"></div>
+            <div class="rond"></div>
+            <div class="rond"></div>
+            <div class="rond"></div>
+        </div>
+    </div>
 
     <video id="videojs-vr-player" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay loop muted>
         <source src="./assets/algae360.mp4" type="video/mp4">
     </video>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"
         integrity="sha512-rMaqGbYalDaQz0lWNF2L8DHPtf4NW+gSZomExS0LcsNyRS4Rmj21+dt97XfXCZE/E569eX72Bh//Jt1EpStgiA=="
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/video.js@7.11.0/dist/video.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/videojs-vr@1.7.1/dist/videojs-vr.min.js"></script>
-    <script src="javascript/index.js"></script> 
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>

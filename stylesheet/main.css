@@ -93,14 +93,39 @@ nav img {
     top: 0;
 }
 
+.progress-container{
+    width: 50%;
+    /* height: 20px; */
+    position: fixed;
+    bottom: 15px;
+    left: 25%;
+    z-index: 9999;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* background-color: #fff; */
+}
+
 #progress {
-    background-color: #fff;
+    background-color: white;
     height: 6px;
     width: 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
+    position: absolute;
+}
+
+.rond-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.rond{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: solid 2px white;
+    background-color: transparent;
 }
 @-webkit-keyframes pulse {
     0% {
