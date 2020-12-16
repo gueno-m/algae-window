@@ -140,11 +140,9 @@ function draw() {
 
     if (pos > 7100.5) {
         title.style.visibility = "visible"
-        rond2.style.backgroundColor = "white";
     }
     else {
         title.style.visibility = "hidden"
-        rond2.style.backgroundColor = "black";
     }
     
     if (pos <= 9000) {
@@ -162,19 +160,19 @@ function draw() {
     progress.style.width = `${w}%`
     // console.log(w)
 
-    if(pos > 6150) {
+    if(pos > 6000) {
         rond1.style.backgroundColor = "white";
     } else {
         rond1.style.backgroundColor = "transparent";
     }
 
-    // if(pos > 7049) {
-    //     rond2.style.backgroundColor = "white";
-    // } else {
-    //     rond2.style.backgroundColor = "black";
-    // }
+    if(pos > 6960) {
+        rond2.style.backgroundColor = "white";
+    } else {
+        rond2.style.backgroundColor = "black";
+    }
 
-    if(pos > 7949) {
+    if(pos > 7908) {
         rond3.style.backgroundColor = "white";
     } else {
         rond3.style.backgroundColor = "transparent";
