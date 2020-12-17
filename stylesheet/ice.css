@@ -12,6 +12,17 @@ body {
     font-style: normal;
 }
 
+@keyframes fly { 0% {
+    transform: translate(0, 67vh);
+}
+50% {
+    transform: translate(0, 60vh);
+}
+100% {
+    transform: translate(0, 67vh);
+}
+}
+
 video {
     object-fit: cover;
     width: 100%;
@@ -33,13 +44,13 @@ video {
 #iceberg{
     width: 32%;
     /* border: solid yellow; */
-    transition: transform 0.5s ease-in;
-    transform: translate(0, 67vh);
-    /* padding-bottom: 50px; */
+    transition: margin 0.5s ease-in;
+    margin-top: 0;
+    animation: fly 2s ease-in-out infinite;
 }
 
 #iceberg:hover{
-    transform: translate(0, 0);
+    margin-top: -125vh;
 }
 
 .txt{
