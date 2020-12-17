@@ -1,0 +1,185 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+}
+
+@font-face {
+    font-family: "MazzardM-Medium";
+    src: url("../assets/fonts/MazzardM-Medium.woff2") format("woff2"),
+        url("../assets/fonts/MazzardM-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Zolina-Regular";
+    src: url("../assets/fonts/Zolina-Regular.woff2") format("woff2"),
+        url("../assets/fonts/Zolina-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.phone-hide {
+    display: none;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    margin: auto;
+    color: white;
+}
+
+nav a:first-child {
+    margin-left: 20px;
+}
+
+nav a:last-child {
+    margin-right: 20px;
+}
+
+nav img {
+    width: 100px;
+}
+
+#titreIce {
+    position: absolute;
+    bottom: 125px;
+    left: -105px;
+    z-index: 555;
+    color: white;
+    font-family: "Zolina-Regular";
+    visibility: hidden;
+    /* letter-spacing: 8px; */
+    transform: rotate(-90deg);
+}
+
+#retourCarte {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index:555;
+    text-decoration: none;
+    color: red;
+    display: flex;
+    visibility: hidden;
+    width: 6%;
+}
+
+#retourCarte img {
+    margin: auto;
+    width: 100%;
+    transition: all .3 ease;
+}
+
+#retourCarte img:hover {
+    filter: drop-shadow(16px 16px 20px black);
+ }
+
+.video-js {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#defaultCanvas0 {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.progress-container{ 
+
+    width: 50%; position: fixed; bottom: 15px; left: calc(25% - 10px); z-index: 9999; display: flex; align-items: center;
+}
+
+#progress {
+    background-color: white;
+    height: 6px;
+    width: 0;
+    position: absolute;
+}
+#progressBase {
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+}
+
+.rond-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.rond{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: solid 2px white;
+    background-color: transparent;
+}
+
+.rond:nth-of-type(4){
+    margin-right: -20px;
+}
+
+.rond:nth-of-type(1){
+    margin-right: 20px;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+0% {
+ opacity: 1;
+}
+50% {
+ opacity: 0.5;
+}
+100% {
+ opacity: 1;
+}
+}
+
+@media screen and (max-width: 750px) {
+    .phone-hide {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-color: #000000;
+        z-index: 1000;
+        display: flex;
+    }
+    
+    .phone-message {
+        margin: auto;
+        text-align: center;
+        width: 90%;
+        font-family: "MazzardM-Medium";
+    }
+}
