@@ -1,0 +1,73 @@
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: "MazzardM-Medium";
+    src: url("../assets/fonts/MazzardM-Medium.woff2") format("woff2"),
+        url("../assets/fonts/MazzardM-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes fly { 0% {
+    transform: translate(0, 67vh);
+}
+50% {
+    transform: translate(0, 60vh);
+}
+100% {
+    transform: translate(0, 67vh);
+}
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.infos-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid red; */
+    height: 100vh;
+} 
+
+#iceberg{
+    width: 32%;
+    /* border: solid yellow; */
+    transition: margin 0.5s ease-in;
+    margin-top: 0;
+    animation: fly 2s ease-in-out infinite;
+}
+
+#iceberg:hover{
+    margin-top: -125vh;
+}
+
+.txt{
+    color: white;
+    font-family: "MazzardM-Medium";
+    width: 30%;
+    font-size: 1.2rem;
+    /* border: solid pink; */
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 5%;
+}
+
+.info{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s ease-in;
+}

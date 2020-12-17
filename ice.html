@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice watch</title>
+    <link rel="stylesheet" href="stylesheet/ice.css">
+</head>
+
+<body>
+    <video autoplay loop muted>
+        <source src="./assets/algae360.mp4" type="video/mp4">
+    </video>
+    <div class="infos-container">
+        <div class="txt">
+            <p class='info'>In the Arctic, the area covered
+                by the ice decreases by approximately
+                13% per decade for 40 years.</p>
+            <p class='info'>The increase in temperature
+                air is responsible for melting ice.
+                Especially at the poles, the air heats up
+                faster than elsewhere, partly because
+                of the high concentration of greenhouse gases.</p>
+            <p class='info'>The melting ice is the main
+                cause of rising waters. Since 1901,
+                the sea level has risen by about 20 cm
+                and the pace picks up.</p>
+        </div>
+        <img src="./assets/ice_berg.png" alt="" id="iceberg">
+    </div>
+    <script>
+        const iceberg = document.getElementById('iceberg')
+        const para = document.querySelectorAll(".info")
+        console.log(para)
+        iceberg.addEventListener('mouseenter', () => {
+            [].forEach.call(para, function (p) {
+                if(p.style.visibility === 'hidden') {
+                    p.style.visibility = 'visible'
+                    p.style.opacity = 1
+                } else {
+                    p.style.visibility = 'visible'
+                    p.style.opacity = 1
+                }
+            });
+        });
+
+        iceberg.addEventListener('mouseleave', () => {
+            [].forEach.call(para, function (p) {
+                if(p.style.visibility === 'visible') {
+                    p.style.visibility = 'hidden'
+                    p.style.opacity = 0
+                } else {
+                    p.style.visibility = 'hidden'
+                    p.style.opacity = 0
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
