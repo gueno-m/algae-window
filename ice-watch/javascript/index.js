@@ -6,11 +6,10 @@ let canvas = null;
  function preload() {
     ice = loadImage('assets/ice_watch.png');
     iceMolten = loadImage('assets/ice_watch_fondu.png');
-    vid = createVideo('../assets/algae360.mp4');
+    createVideo('../assets/ice-watch.mp4');
     Mazzard = loadFont("../assets/fonts/MazzardM-Medium.ttf");
     Zolina = loadFont("../assets/fonts/Zolina-Regular.ttf");
     ZolinaBold = loadFont("../assets/fonts/Zolina-Bold.ttf");
-    vid.size(windowWidth, windowHeight)
  }
 
 function setup() {
@@ -25,15 +24,8 @@ function setup() {
     rond2 = document.getElementsByClassName('rond')[1]
     rond3 = document.getElementsByClassName('rond')[2]
     rond4 = document.getElementsByClassName('rond')[3]
-    
-    // window.addEventListener('resize', function(){
-    //     console.log(canvas)
-    //     canvas.style.width = window.innerWidth;
-    //     canvas.style.height = window.innerHeight;
-    //     canvas.width = window.innerWidth;
-    //     canvas.height = window.innerHeight;
-    // });
 }
+
 function draw() {
 
     a = a + 0.01
@@ -167,7 +159,6 @@ function draw() {
 
     let w = (pos - 6000)/30
     progress.style.width = `${w}%`
-    // console.log(w)
 
     if(pos >= 6000) {
         rond1.style.backgroundColor = "white";
@@ -198,7 +189,6 @@ function draw() {
 
 function mouseWheel(event) {
     pos += event.delta;
-    console.log(pos)
     if (pos < 6000) {
         pos = 6000
     }
@@ -207,3 +197,30 @@ function mouseWheel(event) {
         pos = 9001
     }    
 }
+
+const iceberg = document.getElementById('iceberg')
+        const para = document.querySelectorAll(".info")
+        console.log(para)
+        iceberg.addEventListener('mouseenter', () => {
+            [].forEach.call(para, function (p) {
+                if(p.style.visibility === 'hidden') {
+                    p.style.visibility = 'visible'
+                    p.style.opacity = 1
+                } else {
+                    p.style.visibility = 'visible'
+                    p.style.opacity = 1
+                }
+            });
+        });
+
+        iceberg.addEventListener('mouseleave', () => {
+            [].forEach.call(para, function (p) {
+                if(p.style.visibility === 'visible') {
+                    p.style.visibility = 'hidden'
+                    p.style.opacity = 0
+                } else {
+                    p.style.visibility = 'hidden'
+                    p.style.opacity = 0
+                }
+            });
+        });
